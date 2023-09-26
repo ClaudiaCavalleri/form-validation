@@ -1,0 +1,254 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 18px;
+    font-family: 'Space Grotesk', sans-serif;
+    --white: #FFFFFF;
+    --lightgreyishviolet: #dedddf;
+    --darkgreyishviolet: #8e8593;
+    --verydarkviolet: #21092f;
+}
+
+main {
+    width: 100vw;
+    height: 100vh;
+    text-align: center;
+    display: grid;
+    place-items: center;
+}
+
+.card-container {
+    width: 100vw;
+    height: 240px;
+    background: url(./images/bg-main-mobile.png) no-repeat;
+    background-size: cover;
+}
+
+.card {
+    width: 280px;
+}
+
+.card-back {
+    z-index: 1;
+}
+
+.card__back img,
+.back-p-container {
+    position: absolute;
+    top: 35px;
+    right: 5%;
+}
+
+.card__back p {
+    position: absolute;
+    top: 68px;
+    right: 30px;
+    color: var(--white);
+    font-size: 0.6rem;
+    z-index: 2;
+}
+
+.card-front {
+    height: auto;
+    z-index: 3;
+}
+
+.card__front img,
+.front-data-container {
+    position: absolute;
+    top: 120px;
+    left: 5%;
+}
+
+.shadow {
+    position: absolute;
+    width: 280px;
+    height: 10px;
+    top: 120px;
+    box-shadow: -20px 20px 50px var(--darkgreyishviolet);
+    z-index: -1;
+}
+
+.card__front svg {
+    position: absolute;
+    z-index: 4;
+    top: 20px;
+    left: 20px;
+}
+
+.card-data {
+    position: absolute;
+    bottom: -150px;
+    left: 20px;
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    width: 240px;
+    z-index: 5;
+}
+
+.card-number {
+    letter-spacing: 2px;
+}
+
+.card-name-and-validity {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 0.6rem;
+    padding-block: 15px;
+}
+
+.form-container {
+    width: 350px;
+    margin: auto;
+    padding-block: 50px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+form label {
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    margin-top: 10px;
+}
+form input {
+    height: 50px;
+    font-size: 1rem;
+    font-family: 'Space Grotesk', sans-serif;
+    border-radius: 10px;
+    border: 1px solid var(--lightgreyishviolet);
+    margin-block: 10px;
+}
+
+/* Placeholder text color for different browsers */
+::-webkit-input-placeholder { /* WebKit browsers (Safari, Google Chrome, Opera 15+) */
+    color: var(--lightgreyishviolet);
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color: var(--lightgreyishviolet);
+   opacity: 1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color: var(--lightgreyishviolet);
+   opacity: 1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+   color: var(--lightgreyishviolet);
+}
+::placeholder { /* Tutti i browsers moderni. */
+    color: var(--lightgreyishviolet);
+    padding-left: 15px;
+}
+/* */
+
+
+.text-input {
+    width: 350px;
+}
+
+.expdatepluscvc {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 350px;
+}
+
+.expdate,
+.cvc {
+    width: 170px;
+}
+
+
+button {
+    margin: auto;
+    width: 100%;
+    background-color: var(--verydarkviolet);
+    color: var(--white);
+    font-size: 1rem;
+    letter-spacing: 1px;
+    border: none;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+
+.completed-state {
+    width: 350px;
+    margin: auto;
+    text-align: center;
+}
+
+.completed-state h1 {
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    margin-block: 30px;
+}
+
+.completed-state p {
+    color: var(--darkgreyishviolet);
+}
+
+.continue-button {
+    margin: auto;
+    width: 100%;
+    height: 50px;
+    background-color: var(--verydarkviolet);
+    color: var(--white);
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    border: none;
+    border-radius: 10px;
+    margin-top: 50px;
+}
+
+/* Hidden & display classes */
+
+.hidden {
+    display: none;
+}
+
+
+
+/* Desktop design */
+
+@media only screen and (min-width: 700px) and (orientation: landscape) {
+
+    main {
+        display: flex;
+        flex-direction: row;
+        height: 100vh;
+    }
+
+    .card-container {
+        background: url(./images/bg-main-desktop.png) no-repeat;
+        height: 100vh;
+        width: 33vw;
+    }
+
+    .card__back {
+        position: absolute;
+        top: 50vh;
+        left: calc(33vw + 140px);
+    }
+
+    .card__front {
+        position: absolute;
+        left: calc(33vw - 200px);
+    }
+
+    .form-container,
+    .completed-state {
+        margin-left: 200px;
+    }
+
+}
